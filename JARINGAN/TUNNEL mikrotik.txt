@@ -1,0 +1,31 @@
+	TUNNEL(MKROTIK)
+
+tunnel dibagi menjadi 8 dibagi menjadi 2  :
+A.
+    1. gre tunnel :47 tcp 
+    2. ipip tunnel :4 tcp(ipencap)
+    3. EOIP 47 tcp bisa di bridge perkembangan gre tunnel    --------------> (MIKROTIK proprietary)
+    4. ipsec 50 tcp udp 500
+untuk tunnel 4 diatas dia menggunakan IP public ke IP public
+B.
+    5.PPTP
+    6.L2TP
+    7.OVPN
+    8.SSTP
+untuk 4 diatas ini dia menggunakan IP publick to IP private/IP public to IP public
+
+							
+
+								A.GRE TUNNEL
+pastikan router di NAT dan mendapatkan IP public
+
+ 1.cukup masukan IP publick lawan
+ 2.jika sudah buat IP dengan satu network dengan menggunakan GRE tunnel yang sudah di buat.
+jika sudah maka ROUTER sudah bisa saling terhubung dengan ROUTER yang di tunnel,tetapi PC client belum bisa RECHABLE ke PC client sebelahnya.cara-nya
+dengan menggunakan static route atau dynaic route dengan menggunakan gateway IP tunnel yang dibuat.
+
+B.untuk IPIP konfigurasi sama dengan GRE tunnel hanya tinggal di ganti interface IP-nya dan mode tunnel nya.
+C.untuk TUNNEL EOIP sama juga konfiguasi-nya tetapi dia menggunakan TUNNEL ID dan TUNNEL ID harus sama dengan perangkat yang akan di TUNNEL.
+D.kalau IP SEC dia menggunakan IPsec security.dan itu juga harus sama semua peranggkat yang menjalankan TUNNEL.dan juga dia harus menggunakan 
+   LOCAL ADDRESS.
+ 
